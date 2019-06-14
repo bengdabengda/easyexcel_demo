@@ -13,6 +13,7 @@ import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.metadata.Table;
 import com.alibaba.excel.support.ExcelTypeEnum;
+import com.example.base.demo.util.Styleutil;
 import com.example.base.demo.vo.Model;
 import com.example.base.demo.vo.User;
 
@@ -42,7 +43,8 @@ public class CreateExcelByObj {
             //使用对象生成sheet，需要是定sheet的对象类型
             Sheet sheet = new Sheet(1, 0, User.class);
             sheet.setSheetName("sheet-user测试");
-
+            //样式
+            sheet.setTableStyle(Styleutil.createTableStyle());
 
             //使用对象生成excel,使用write方法
             writer.write(data, sheet);
@@ -69,7 +71,8 @@ public class CreateExcelByObj {
             //使用对象生成sheet，需要指定sheet的对象类型 -- 或者使用table对象指定
             Sheet sheet = new Sheet(1, 0, Model.class);
             sheet.setSheetName("sheet-user测试");
-
+            //样式
+            sheet.setTableStyle(Styleutil.createTableStyle());
 
             //使用对象生成excel,使用write方法
             writer.write(data, sheet);
@@ -98,6 +101,8 @@ public class CreateExcelByObj {
             ExcelWriter writer = new ExcelWriter(out, ExcelTypeEnum.XLSX);
             Sheet sheet1 = new Sheet(1, 0);
             sheet1.setSheetName("sheet1");
+            //样式
+            sheet1.setTableStyle(Styleutil.createTableStyle());
 
             // 数据全是List<String> 无模型映射关系
             Table table1 = new Table(1);

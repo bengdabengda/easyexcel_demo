@@ -13,6 +13,7 @@ import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.metadata.Table;
 import com.alibaba.excel.support.ExcelTypeEnum;
+import com.example.base.demo.util.Styleutil;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;
@@ -40,6 +41,8 @@ public class CreateExcelByList {
             ExcelWriter writer = new ExcelWriter(out, ExcelTypeEnum.XLSX);
             Sheet sheet = new Sheet(1, 0);
             sheet.setSheetName("sheet测试");
+            //样式
+            sheet.setTableStyle(Styleutil.createTableStyle());
             //外层每个list是一列，内层每一个list是一行
             List<List<String>> data = new ArrayList<>();
             for (int i = 0; i < 100; i++) {
@@ -83,6 +86,8 @@ public class CreateExcelByList {
             ExcelWriter writer = new ExcelWriter(out, ExcelTypeEnum.XLSX);
             Sheet sheet = new Sheet(1, 0);
             sheet.setSheetName("sheet测试");
+            //样式
+            sheet.setTableStyle(Styleutil.createTableStyle());
             //外层每个list是一列，内层每一个list是一行
             List<List<String>> data = new ArrayList<>();
             for (int i = 0; i < 100; i++) {
