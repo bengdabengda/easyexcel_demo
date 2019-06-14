@@ -15,12 +15,14 @@ import com.alibaba.excel.metadata.BaseRowModel;
 /**
  * 通过对象生成excel
  * 需要继承BaseRowModel
- * 需要使用ExcelProperty注解属性
+ * 字段上使用 @ExcelProperty 注解，注解中 value 属性指定字段名，index属性指定字段排序
  * value中的第X个表示第X行
  * 表头格式为 A,X
  *            A,Z
  *            B,X
  *      的注解会出错,A和B对应的下一级列名不能重复
+ *
+ *      -- 在同一行不能有同名表头，怎么处理？？？
  *
  * @author sun
  * @create 2019/6/14
@@ -28,21 +30,21 @@ import com.alibaba.excel.metadata.BaseRowModel;
  */
 public class Model extends BaseRowModel {
 
-    @ExcelProperty(value = {"日期","日期"},index = 0)
+    @ExcelProperty(value = {"测试表","" ,"日期","日期"},index = 0)
     private String c1;
-    @ExcelProperty(value = {"天气","天气"},index = 1)
+    @ExcelProperty(value = {"测试表","" ,"天气","天气"},index = 1)
     private String c2;
-    @ExcelProperty(value = {"自然","温度1℃"},index = 2)
+    @ExcelProperty(value = {"测试表","" ,"自然","温度1℃"},index = 2)
     private String c3;
-    @ExcelProperty(value = {"自然","湿度1%"},index = 3)
+    @ExcelProperty(value = {"测试表","" ,"自然","湿度1%"},index = 3)
     private String c4;
-    @ExcelProperty(value = {"调整","温度2℃"},index = 4)
+    @ExcelProperty(value = {"测试表","" ,"调整","温度2℃"},index = 4)
     private String c5;
-    @ExcelProperty(value = {"调整","湿度2%"},index = 5)
+    @ExcelProperty(value = {"测试表","" ,"调整","湿度2%"},index = 5)
     private String c6;
-    @ExcelProperty(value = {"备注","备注"},index = 6)
+    @ExcelProperty(value = {"测试表","" ,"备注","备注"},index = 6)
     private String c7;
-    @ExcelProperty(value = {"记录人","记录人"},index = 7)
+    @ExcelProperty(value = {"测试表","" ,"记录人","记录人"},index = 7)
     private String c8;
 
 

@@ -93,6 +93,7 @@ public class CreateExcelByList {
                 data.add(item);
             }
 
+            //表头有多种配置方式，可以按需求配置
             //设置表头
             List<List<String>> head = new ArrayList<>();
             //第一列的表头有多个，分别占一行
